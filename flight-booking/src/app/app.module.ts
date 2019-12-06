@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { createCustomElement } from '@angular/elements';
 import { BookingComponent } from './booking/booking.component';
+import { AdddetailsComponent } from './adddetails/adddetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookingComponent
+    BookingComponent,
+    AdddetailsComponent
   ],
   imports: [
     BrowserModule,

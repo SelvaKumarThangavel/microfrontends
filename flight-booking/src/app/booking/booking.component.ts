@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingComponent implements OnInit {
 
-  title = 'micro front ends';
+  title = 'Flight Booking ';
 
   constructor() { }
 
