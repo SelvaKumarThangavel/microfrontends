@@ -1,3 +1,30 @@
-<p>
-  adddetails works!
-</p>
+<mat-card-title>Add Budget Details</mat-card-title>
+<br /><br />
+<form [formGroup]="addBudgetForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Project Name</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let project of projects" [value]="project.value">
+        {{project.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose Start date" formControlName="startDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+<mat-form-field>
+  <input matInput [matDatepicker]="picker1" placeholder="Choose End date" formControlName="endDate">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput placeholder="Total Project Cost" formControlName="projectCost" >
+  </mat-form-field>
+<br/>
+  <button mat-raised-button color="accent">Submit</button>
+</form>

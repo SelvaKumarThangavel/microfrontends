@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    console.log("inside submit")
+    //console.log("inside submit")
     this.authenticationService.login(this.loginForm.value).pipe(first())
       .subscribe(
         data => {
