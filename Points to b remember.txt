@@ -1,0 +1,29 @@
+Command for Angular application:
+1. ng new angular_App_name - to create a new application
+2. ng g c component_name - to create a component
+3. ng g c component_name -it -is - to create component with in-line template and styles
+4. ng g s service_name - to create a service
+5. ng serve or npm start - to start the angular application
+6. npm run serve - to run the express and sequelize
+7. npm install express body-parser cors sequelize
+8. to access via IP address run the application with ng serve --host 0.0.0.0 command
+
+
+Command for react application:
+1. npm start - to start react application
+
+Micro front Ends:
+1. ng add @angular/elements
+2. ng add ngx-build-plus
+3. npm i -g http-server --save
+4. ng build --prod --output-hashing none --single-bundle true
+5. http-server ./dist/flight-booking -p 8081
+6. <script type="text/javascript" src="http://localhost:8081/main.js"></script>
+  <script type="text/javascript" src="http://localhost:8082/main.js"></script>
+7. ng serve
+
+
+http-server -p 8081
+
+https://www.youtube.com/watch?v=Fdf5aTYRW0E
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ
