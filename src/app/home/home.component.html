@@ -1,3 +1,18 @@
- <div style="margin-bottom: 10px;" id="flight-booking-container"><app-flight-booking></app-flight-booking></div>
+<br/>
+<a href="/home?ApplicationName=SLATracker" >SARD SLA Tracker</a><br/><br/>
+<a href="/home?ApplicationName=TestApplication" >Test Application 1</a><br/>
+
+<div *ngIf="isSLATrackerApplication === true">
+  <app-slatracker></app-slatracker>
+  <!-- <app-flight-booking></app-flight-booking> -->
+</div>
+
+<div *ngIf="isTestApplication === true">
+  <app-test-application></app-test-application>
+   <!-- <app-train-booking></app-train-booking>  -->
+</div >
+
+
+<!-- <app-flight-booking></app-flight-booking> -->
 
   <!-- <div id="train-booking-container"><app-train-booking></app-train-booking></div> -->
