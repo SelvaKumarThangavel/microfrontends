@@ -14,12 +14,16 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { SLATrackerComponent } from './slatracker/slatracker.component';
+import { TestApplicationComponent } from './test-application/test-application.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SLATrackerComponent,
+    TestApplicationComponent
   ],
   imports: [
     BrowserModule,
