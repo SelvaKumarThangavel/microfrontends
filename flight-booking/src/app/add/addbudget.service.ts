@@ -11,8 +11,8 @@ export class AddbudgetService {
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-  
-  url: string = "http://localhost:8089/addbudget";
+
+  url: string = "http://localhost:8089/api/auth";
 
   constructor(private _http: HttpClient) { 
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));

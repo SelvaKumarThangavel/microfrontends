@@ -1,11 +1,13 @@
+<div style="text-align:center">
 <mat-card-title>Add Budget Details</mat-card-title>
+</div>
 <br /><br />
 <form [formGroup]="addBudgetForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <mat-label>Project Name</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let project of projects" [value]="project.value">
-        {{project.viewValue}}
+    <mat-select (selectionChange)="changeProject($event)" formControlName="projectName">
+      <mat-option *ngFor="let project of projects" [value]="project.name">
+        {{project.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>

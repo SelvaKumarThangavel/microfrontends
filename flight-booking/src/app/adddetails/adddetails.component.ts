@@ -7,6 +7,7 @@ import { AddbudgetService } from '../add/addbudget.service';
 import { first } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import { HttpClient, HttpResponse ,HttpHeaders, HttpRequest} from '@angular/common/http';
+import { MatSelectChange } from '@angular/material';
 
 @Component({
   selector: 'app-adddetails',
@@ -18,6 +19,8 @@ export class AdddetailsComponent implements OnInit {
   addBudgetForm: FormGroup;
   formattedAmount;
   authToken: any;
+  projName: any;
+  selectedValue: string;
 
   get startDate(){
     return this.addBudgetForm.get("startDate")
@@ -31,10 +34,14 @@ export class AdddetailsComponent implements OnInit {
     return this.addBudgetForm.get("projectCost")
   }
 
-  projects: Project[] = [
-    {value: '1', viewValue: 'Test Project 1'},
-    {value: '2', viewValue: 'Test Project 2'},
-    {value: '3', viewValue: 'Test Project 3'}
+  get projectName(){
+    return this.addBudgetForm.get("projectName")
+  }
+
+  projects = [
+    {value: '1', name: 'Test Project 1'},
+    {value: '2', name: 'Test Project 2'},
+    {value: '3', name: 'Test Project 3'}
   ];
 
   constructor(private fb: FormBuilder, private router: Router, private addbudget: AddbudgetService) { }
@@ -43,12 +50,19 @@ export class AdddetailsComponent implements OnInit {
     this.addBudgetForm = this.fb.group({
       startDate: ['', Validators.required],
       projectCost: ['', Validators.required],
-      endDate: ['', Validators.required]
+      endDate: ['', Validators.required],
+      projectName:['', Validators.required]
     })
   }
 
-  onSubmit(){
+  changeProject(event: MatSelectChange){
+    //console.log("inside change project" + event.value)
+    this.addBudgetForm.value.projectName = event.value;
+    //console.log(this.addBudgetForm.value)
+  }
 
+  onSubmit(){
+    console.log("inside submit")
     var swal: any = Swal.mixin({
       toast: true,
       width: '400px',
@@ -57,15 +71,9 @@ export class AdddetailsComponent implements OnInit {
       timer: 1000
     });
     
-    let currentUserToken = JSON.parse(localStorage.getItem('currentUser'));
-    console.log("Token ::: " + currentUserToken);
 
-    setHeaders: {
-      AuthToken: `${currentUserToken.accessToken}`
-    }
-    
+    //this.addBudgetForm.value.projectName = this.projName;    
     this.addbudget.add(this.addBudgetForm.value).pipe(first()).subscribe(add => {
-
       swal.fire({
         type: 'success',
         title: add.message
