@@ -1,0 +1,25 @@
+<div style="text-align:center">
+  <mat-card-title>Save Movie Ratings</mat-card-title>
+  </div>
+<br/>
+<form [formGroup]="addMovieAndRatingForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Movie Name</mat-label>
+    <mat-select formControlName="movie" [(ngModel)]="selectedMovie" >
+      <mat-option *ngFor="let movie of movieNames" [value]="movie.name">
+        {{movie.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <mat-select formControlName="rating" [(ngModel)]="selectedRating">
+      <mat-option *ngFor="let rating of ratings" [value]="rating.value">
+        {{rating.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<br/>
+  <button mat-raised-button color="accent">Submit</button>
+</form>
