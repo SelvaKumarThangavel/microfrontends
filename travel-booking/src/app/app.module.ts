@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { SLATrackerComponent } from './slatracker/slatracker.component';
 import { TestApplicationComponent } from './test-application/test-application.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TestApplicationComponent } from './test-application/test-application.co
     LoginComponent,
     HomeComponent,
     SLATrackerComponent,
-    TestApplicationComponent
+    TestApplicationComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

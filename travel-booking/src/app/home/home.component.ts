@@ -21,24 +21,15 @@ export class HomeComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.param1 = params['ApplicationName'];
       this.param2 = this.param1;
-      console.log(this.param1)
+      //console.log(this.param1)
       if(this.param1 === 'SLATracker'){
         this.isSLATrackerApplication = true;
         this.router.navigate(["home", this.param1]);
       }else if(this.param2 === 'TestApplication'){
         this.isTestApplication = true;
-        this.router.navigate(["home/test", this.param2]);
+        this.router.navigate(["home/test", this.param1]);
       }
   });
-
-  /* this.route.queryParams.subscribe(params => {
-    this.param2 = params['ApplicationName'];
-    console.log(this.param2)
-    if(this.param2 === 'TestApplication'){
-      this.isTestApplication = true;
-      this.router.navigate(["home/test", this.param2]);
-    }
-  }) */
   
   }
 
