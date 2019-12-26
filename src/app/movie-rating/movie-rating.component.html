@@ -1,0 +1,77 @@
+<!-- <div style="text-align:center">
+  <mat-card-title>Save Movie Ratings</mat-card-title>
+  </div>
+<br/>
+<form [formGroup]="addMovieAndRatingForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <mat-label>Movie Name</mat-label>
+    <mat-select formControlName="movie" [(ngModel)]="selectedMovie" >
+      <mat-option *ngFor="let movie of movieNames" [value]="movie.name">
+        {{movie.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <mat-select formControlName="rating" [(ngModel)]="selectedRating">
+      <mat-option *ngFor="let rating of ratings" [value]="rating.value">
+        {{rating.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<br/>
+  <button mat-raised-button color="accent">Submit</button>
+</form> -->
+
+<br />
+<form [formGroup]="addPolicyDetailsForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Policy No" formControlName="policyNo" maxlength="10" numbersOnly>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput placeholder="Plan Name" formControlName="planName">
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <mat-label>Policy Term</mat-label>
+    <mat-select (selectionChange)="onChangePolicyTerm($event)" formControlName="policyTerm">
+      <mat-option *ngFor="let term of policyTerms" [value]="term.name">
+        {{term.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Policy Start Date" formControlName="startDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker1" placeholder="Policy End Date" formControlName="endDate">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput placeholder="Sum Assured" formControlName="sumAssured" maxlength="15" numbersOnly>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput placeholder="Amount Due" formControlName="amountDue" maxlength="10" numbersOnly>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <mat-label>Premium Mode</mat-label>
+    <mat-select (selectionChange)="onChangeMode($event)" formControlName="premiumMode">
+      <mat-option *ngFor="let mode of premiumModes" [value]="mode.name">
+        {{mode.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br/>
+  <button mat-raised-button color="accent">Save</button>
+</form>

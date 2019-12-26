@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  user:any;
 
   get username() {
     return this.loginForm.get('username');
@@ -42,6 +43,10 @@ export class LoginComponent implements OnInit {
           }
         }
       )
+
+      /* this.user = {"accessToken":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImlhdCI6MTU3NjU4NzU5MywiZXhwIjoxNTc3MTkyMzkzfQ.Sas4ktYib6aMJDJP-AnK8f4aPbA3s2B3BZdOvlt4IJS7MHSfjzDQnzpLCzKlFXWUBrEsDWw4lFEYKQkifDizCQ","tokenType":"Bearer"};
+      localStorage.setItem('currentUser', JSON.stringify(this.user));
+      this.router.navigate(['/home']); */
   }
 
 }

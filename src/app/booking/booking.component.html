@@ -1,5 +1,19 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <!-- <a href="javascript:alert('Welcome to Training Booking App!!');" style="font-size:25px;">{{ title }}</a> -->
-  Welcome to Training Booking App!!
+  <mat-card-title>Welcome to Application 1</mat-card-title>
 </div>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose Start date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+&nbsp;&nbsp;&nbsp;
+<mat-form-field>
+<input matInput [matDatepicker]="picker1" placeholder="Choose End date">
+<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+<mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+&nbsp;&nbsp;&nbsp;
+<mat-form-field>
+  <input matInput placeholder="Total Project Cost">
+</mat-form-field>
+

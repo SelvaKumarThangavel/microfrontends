@@ -10,12 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Angular Material
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatFormFieldModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatFormFieldModule, MatTabsModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { SLATrackerComponent } from './slatracker/slatracker.component';
 import { TestApplicationComponent } from './test-application/test-application.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TestApplicationComponent } from './test-application/test-application.co
     LoginComponent,
     HomeComponent,
     SLATrackerComponent,
-    TestApplicationComponent
+    TestApplicationComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { TestApplicationComponent } from './test-application/test-application.co
     BrowserAnimationsModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

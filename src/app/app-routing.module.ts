@@ -9,14 +9,9 @@ import { TestApplicationComponent } from './test-application/test-application.co
 const routes: Routes = [
   {path : '', component : LoginComponent},
   {path : 'login', component : LoginComponent, canActivate: [AuthGuard]},
-  {path : 'home', component : HomeComponent, 
-  /* children:[
-    {path : 'home/:this.param1', component : SLATrackerComponent},
-  {path : 'home/:this.param2', component : TestApplicationComponent}
-  ] */
-},
+  {path : 'home', component : HomeComponent},
   {path : 'home/:this.param1', component : SLATrackerComponent},
-  {path : 'home/:this.param2', component : TestApplicationComponent}
+  {path : 'home/test/:this.param1', component : TestApplicationComponent}
   
 ];
 

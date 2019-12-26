@@ -8,11 +8,12 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AddbudgetService {
+  
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  url: string = "http://localhost:8089/api/auth";
+  url: string = "http://10.100.9.187:8089/api";
 
   constructor(private _http: HttpClient) { 
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -23,9 +24,16 @@ export class AddbudgetService {
     return this.currentUserSubject.value;
   }
 
-  add(addbudget) {
+  /* add(addbudget) {
     //console.log("inside add budget")
-    return this._http.post<any>(`${this.url}/addbudget`, addbudget).pipe(map(add => {
+    return this._http.post<any>(`${this.url}/add`, addbudget).pipe(map(add => {
+
+      return add;
+    }))
+  } */
+
+  addCustomerDetails(addCustomerData: any) {
+    return this._http.post<any>(`${this.url}/addCustomer`, addCustomerData).pipe(map(add => {
 
       return add;
     }))

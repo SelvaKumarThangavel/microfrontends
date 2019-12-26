@@ -1,4 +1,6 @@
+<!-- <div style="text-align:center">
 <mat-card-title>Add Budget Details</mat-card-title>
+</div>
 <br /><br />
 <form [formGroup]="addBudgetForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
@@ -9,22 +11,72 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  &nbsp;&nbsp;&nbsp;
+  
   <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Choose Start date" formControlName="startDate">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-  &nbsp;&nbsp;&nbsp;
+  
 <mat-form-field>
   <input matInput [matDatepicker]="picker1" placeholder="Choose End date" formControlName="endDate">
   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
   <mat-datepicker #picker1></mat-datepicker>
 </mat-form-field>
-  &nbsp;&nbsp;&nbsp;
+  
   <mat-form-field>
     <input matInput placeholder="Total Project Cost" formControlName="projectCost" >
   </mat-form-field>
 <br/>
   <button mat-raised-button color="accent">Submit</button>
+</form> -->
+<br />
+<form [formGroup]="addCustomerForm" (ngSubmit)="onSubmit()">
+  
+    <mat-form-field>
+      <input matInput placeholder="Customer Name" formControlName="customerName">
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <mat-select (selectionChange)="onChangeGender($event)" formControlName="selectedGender">
+        <mat-option *ngFor="let gender of genders" [value]="gender.name">
+          {{gender.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <input matInput placeholder="Mobile Number" formControlName="mobileNo" maxlength="10" numbersOnly>
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <input matInput placeholder="Email ID" formControlName="emailId" type="email">
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+      <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <mat-label>Nationality</mat-label>
+      <mat-select (selectionChange)="changeNationality($event)" formControlName="selectedNationality">
+        <mat-option *ngFor="let nationality of nationalities" [value]="nationality.name">
+          {{nationality.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+      <input matInput placeholder="ZIP Code" formControlName="zipCode" maxlength="6" numbersOnly>
+    </mat-form-field>
+
+  <br/>
+  <button mat-raised-button color="accent">Save</button>
 </form>
